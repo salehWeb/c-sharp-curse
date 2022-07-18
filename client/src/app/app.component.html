@@ -1,0 +1,20 @@
+<table class="ww-full flex mt-20 h-full justify-center items-center flex-col">
+    <thead>
+      <tr class="grid w-full shadow-xl gap-6 text-[30px] p-4 border grid-cols-4">
+        <th class="border bg-slate-100 text-center py-2">Name</th>
+        <th class="border bg-slate-100 text-center py-2">First Name</th>
+        <th class="border bg-slate-100 text-center py-2">Last Name</th>
+        <th class="border bg-slate-100 text-center py-2">place</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hero of heros" class="grid  shadow-xl mt-10 w-full gap-6 text-[30px] p-4 border grid-cols-4">
+        <td class="border bg-slate-100 text-center py-2">{{hero.name}}</td>
+        <td class="border bg-slate-100 text-center py-2">{{hero.firstName}}</td>
+        <td class="border bg-slate-100 text-center py-2">{{hero.lastName}}</td>
+        <td class="border bg-slate-100 text-center py-2">{{hero.place}}</td>
+      </tr>
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>
