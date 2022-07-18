@@ -37,7 +37,7 @@ namespace WebApplication1.Controllers
         public ActionResult<Hero> Post([FromBody] Hero vaule)
         {
             heroService.Create(vaule);
-            return CreatedAtAction(nameof(Get), new { id = vaule.Id }, vaule);
+            return CreatedAtAction(nameof(Get), new { id = vaule._id }, vaule);
         }
 
         [HttpPut("{id}")]
@@ -49,8 +49,16 @@ namespace WebApplication1.Controllers
             {
                 return NotFound("Hero dose not Exist");
             }
+            Hero HeroDate = new()
+            {
+                _id = id,
+                Name = vaule.Name,
+                Place = vaule.Place,
+                LastName = vaule.LastName,
+                FirstName = vaule.FirstName
+            };
 
-            heroService.Update(id, vaule);
+            heroService.Update(id, HeroDate);
 
             return NoContent();
         }

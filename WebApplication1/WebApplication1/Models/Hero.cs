@@ -6,7 +6,8 @@ namespace WebApplication1.Models;
 public class Hero
 {
     [BsonId]
-    public string? Id { get; set; }
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? _id { get; set; }
 
     [BsonElement("name")]
     public string Name { get; set; } = "";

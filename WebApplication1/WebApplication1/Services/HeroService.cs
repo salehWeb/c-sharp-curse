@@ -26,17 +26,17 @@ namespace WebApplication1.Services
 
         public Hero Get(string id)
         {
-            return _hero.Find(hero => hero.Id == id).FirstOrDefault();
+            return _hero.Find(hero => hero._id == id).FirstOrDefault();
         }
 
         public void Remove(string id)
         {
-            _hero.DeleteOne(hero => hero.Id == id);
+            _hero.DeleteOne(hero => hero._id == id);
         }
 
         public void Update(string id, Hero hero)
         {
-            _hero.ReplaceOne(hero => hero.Id == id, hero);
+            _hero.ReplaceOne(hero => hero._id == id, hero);
         }
     }
 }
